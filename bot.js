@@ -5,7 +5,7 @@ const bot = new Discord.Client({disableEveryone: true});
 bot.on("ready", async () => {
 	console.log(`PossumBot Is Now Activated`);
 	//Bot Status
-	bot.user.setActivity(`dyno.gg | ?help`);
+	bot.user.setActivity(`!invite For Invite Link`);
 
 	try {
 		//Generates a invite link in the console...
