@@ -5,7 +5,7 @@ const bot = new Discord.Client({disableEveryone: true});
 bot.on("ready", async () => {
 	console.log(`PossumBot Is Now Activated`);
 	//Bot Status
-	bot.user.setActivity.Streaming(`>help | >link`);
+	bot.user.setActivity.(`Agent2Op`);
 
 	try {
 		//Generates a invite link in the console...
